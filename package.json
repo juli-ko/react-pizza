@@ -6,21 +6,23 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.7.9",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm start\"",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prepare": "husky"
+    "prepare": "husky",
+    "server": "json-server -w server/pizza.json -p 9000"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,json,css,scss,md}": [
-      "eslint --fix",
       "prettier --write"
     ]
   },
@@ -44,9 +46,11 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.16.0",
+    "concurrently": "^9.1.0",
     "eslint-plugin-react": "^7.37.2",
     "globals": "^15.13.0",
     "husky": "^9.1.7",
+    "json-server": "^1.0.0-beta.3",
     "lint-staged": "^15.2.10",
     "prettier": "^3.4.2",
     "typescript-eslint": "^8.17.0"
