@@ -10,7 +10,6 @@ function Categories() {
     'Гриль',
     'Острые',
     'Закрытые',
-    '',
   ];
 
   const onClickCategory = (index) => {
